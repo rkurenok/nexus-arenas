@@ -1,0 +1,238 @@
+/* Обнуляющий стиль */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+
+/*------------------------------------------------------*/
+
+* {
+    padding: 0;
+    margin: 0;
+    /* color: #1a1f36; */
+    color: #ffffff;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    font-family: Segoe UI, sans-serif;
+}
+
+body {
+    min-height: 100%;
+    /* background-color: #ffffff; */
+    background: url('./img/Background_Black_ocean_dark.png') fixed no-repeat;
+}
+
+.character {
+    display: flex;
+    padding-top: 50px;
+}
+
+.glad {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.glad > div {
+    margin-bottom: 15px;
+}
+
+span, div.result, li {
+    display: block;
+    font-size: 20px;
+    line-height: 28px;
+    /* color: #1a1f36; */
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    /* margin-bottom: 10px; */
+    margin-left: 15px;
+}
+
+a {
+    color: #5469d4;
+    text-decoration: unset;
+}
+
+input {
+    font-size: 16px;
+    line-height: 28px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background-color: rgb(26 26 26);
+    min-width: 250px;
+    border: 2px solid rgb(98 98 98);
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 20px auto;
+    min-width: 0px;
+    padding: 8px 48px;
+    border: none;
+    border-radius: 6px;
+}
+
+.battle-log {
+    display: flex;
+    justify-content: center;
+}
+
+.battle-log>ol {
+    /* text-align: center; */
+    padding: 10px;
+    list-style: none;
+    flex: 0 0 50%;
+}
+
+.battle-log>ol:first-child {
+    text-align: right;
+}
+
+.battle-log>ol:last-child {
+    text-align: left;
+}
+
+.battle-log>ol > li, div.result {
+    animation: showLog 1s linear forwards;
+}
+
+@keyframes showLog {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+div.result {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+li > span, li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: revert;
+}
+
+li.attack {
+    color: #7c7c7c;
+}
+
+li.attack.crit {
+    color: #92572e;
+}
+
+li.current-hp {
+    color: #ffffff;
+}
+
+span.green {
+    color: #54ad34;
+}
+
+span.yellow {
+    color: #bec650;
+}
+
+span.red {
+    color: #61090f;
+}
+
+@media (max-width: 584px) {
+    .character {
+        flex-direction: column;
+    }
+}
