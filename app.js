@@ -11,6 +11,10 @@ document.querySelector('input[type="submit"]').addEventListener('click', e => {
     let arrayFirstHalf = characters.slice(0, halfwayThrough);
     let arraySecondHalf = characters.slice(halfwayThrough, characters.length);
 
+    document.querySelector(`.battle-log`).querySelectorAll('ol').forEach(el => {
+        el.remove();
+    });
+
     let gladiator1 = new Gladiator(...arrayFirstHalf);
     let gladiator2 = new Gladiator(...arraySecondHalf);
     console.log(gladiator1);
@@ -71,6 +75,10 @@ class Gladiator {
         li.innerHTML = text;
         // li.append(span);
         tag.append(li);
+        if (tag.querySelectorAll('li').length == (tag.nextSibling && tag.nextSibling.querySelectorAll('li').length || tag.previousSibling && tag.previousSibling.querySelectorAll('li').length)) {
+            const logHeight = tag.nextSibling ? tag.nextSibling.querySelector('li:last-child').offsetHeight : tag.previousSibling.querySelector('li:last-child').offsetHeight;
+            li.style.minHeight = logHeight;
+        }
         scrollPage();
     }
 
