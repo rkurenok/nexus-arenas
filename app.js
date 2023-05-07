@@ -14,6 +14,7 @@ document.querySelector('input[type="submit"]').addEventListener('click', e => {
     document.querySelector(`.battle-log`).querySelectorAll('ol').forEach(el => {
         el.remove();
     });
+    document.querySelector('div.result').remove();
 
     let gladiator1 = new Gladiator(...arrayFirstHalf);
     let gladiator2 = new Gladiator(...arraySecondHalf);
