@@ -12,9 +12,9 @@ document.querySelector('input[type="submit"]').addEventListener('click', e => {
     let arraySecondHalf = characters.slice(halfwayThrough, characters.length);
 
     document.querySelector(`.battle-log`).querySelectorAll('ol').forEach(el => {
-        el.remove();
+        el && el.remove();
     });
-    document.querySelector('div.result').remove();
+    document.querySelector('div.result') && document.querySelector('div.result').remove();
 
     let gladiator1 = new Gladiator(...arrayFirstHalf);
     let gladiator2 = new Gladiator(...arraySecondHalf);
@@ -62,24 +62,15 @@ class Gladiator {
     }
 
     log(text, tag, classNames) {
-        // if (!tag) {
-        //     tag = document.createElement('ol');
-        //     tag.setAttribute('id', this.name);
-        //     document.querySelector(`.battle-log`).append(tag);
-        // }
-
         let li = document.createElement('li');
         li.classList.add(...classNames);
-        // result.classList.add();
-        // let span = document.createElement('span');
-        // span.innerText = text;
         li.innerHTML = text;
-        // li.append(span);
-        tag.append(li);
-        if (tag.querySelectorAll('li').length == (tag.nextSibling && tag.nextSibling.querySelectorAll('li').length || tag.previousSibling && tag.previousSibling.querySelectorAll('li').length)) {
+        if (tag.querySelectorAll('li').length == (tag.nextSibling && tag.nextSibling.querySelectorAll('li').length - 1 || tag.previousSibling && tag.previousSibling.querySelectorAll('li').length - 1)) {
             const logHeight = tag.nextSibling ? tag.nextSibling.querySelector('li:last-child').offsetHeight : tag.previousSibling.querySelector('li:last-child').offsetHeight;
-            li.style.minHeight = logHeight;
+            console.log(logHeight);
+            li.style.cssText = `min-height: ${logHeight}px`;
         }
+        tag.append(li);
         scrollPage();
     }
 
@@ -123,13 +114,6 @@ function battle(gladiator1, gladiator2) {
         }
     }, gladiator2.speed * 10);
 }
-
-// function log() {
-//     let li = document.createElement('li');
-//     // result.classList.add();
-//     let span = document.createElement('span');
-//     li.append(span);
-// }
 
 function scrollPage() {
     window.scrollTo(0, document.body.scrollHeight);
