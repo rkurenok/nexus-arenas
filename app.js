@@ -18,8 +18,8 @@ document.querySelector('input[type="submit"]').addEventListener('click', e => {
 
     let gladiator1 = new Gladiator(...arrayFirstHalf);
     let gladiator2 = new Gladiator(...arraySecondHalf);
-    console.log(gladiator1);
-    console.log(gladiator2);
+    // console.log(gladiator1);
+    // console.log(gladiator2);
 
     battle(gladiator1, gladiator2);
 })
@@ -56,7 +56,7 @@ class Gladiator {
         const result = this.textLog = `${this.name}${critText} нанес ${dmgDone} урона`;
         const logBattle = document.querySelector(`.battle-log > ol#${this.name}`);
         this.log(result, logBattle, critText ? ['attack', 'crit'] : ['attack']);
-        console.log(result);
+        // console.log(result);
 
         return dmgDone;
     }
@@ -67,7 +67,7 @@ class Gladiator {
         li.innerHTML = text;
         if (tag.querySelectorAll('li').length == (tag.nextSibling && tag.nextSibling.querySelectorAll('li').length - 1 || tag.previousSibling && tag.previousSibling.querySelectorAll('li').length - 1)) {
             const logHeight = tag.nextSibling ? tag.nextSibling.querySelector('li:last-child').offsetHeight : tag.previousSibling.querySelector('li:last-child').offsetHeight;
-            console.log(logHeight);
+            // console.log(logHeight);
             li.style.cssText = `min-height: ${logHeight}px`;
         }
         tag.append(li);
@@ -94,7 +94,7 @@ class Gladiator {
 function battle(gladiator1, gladiator2) {
     let b = setInterval(() => {
         gladiator2.hp = +(gladiator2.hp - gladiator1.hit(gladiator2.armPercentMT)).toFixed(2);
-        console.log(gladiator2.hp);
+        // console.log(gladiator2.hp);
         gladiator2.getCurrentHP();
         if (gladiator1.hp < 0 || gladiator2.hp < 0) {
             Gladiator.getWinner(gladiator1.hp < 0 && gladiator2.hp < 0 ? "" : gladiator1.hp < 0 ? gladiator2.name : gladiator1.name);
@@ -105,7 +105,7 @@ function battle(gladiator1, gladiator2) {
 
     let a = setInterval(() => {
         gladiator1.hp = +(gladiator1.hp - gladiator2.hit(gladiator1.armPercentMT)).toFixed(2);
-        console.log(gladiator1.hp);
+        // console.log(gladiator1.hp);
         gladiator1.getCurrentHP();
         if (gladiator1.hp < 0 || gladiator2.hp < 0) {
             Gladiator.getWinner(gladiator1.hp < 0 && gladiator2.hp < 0 ? "" : gladiator1.hp < 0 ? gladiator2.name : gladiator1.name);
