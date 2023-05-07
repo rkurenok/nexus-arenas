@@ -1,28 +1,56 @@
-document.querySelector('input[type="submit"]').addEventListener('click', e => {
-    e.preventDefault();
-    const characters = [];
-    document.querySelectorAll('input').forEach(el => {
-        if (el.getAttribute('type') != 'submit') {
-            characters.push(el.value);
-        }
+['click','touchend'].forEach( evnt => 
+    document.querySelector('input[type="submit"]').addEventListener(evnt, e => {
+        e.preventDefault();
+        const characters = [];
+        document.querySelectorAll('input').forEach(el => {
+            if (el.getAttribute('type') != 'submit') {
+                characters.push(el.value);
+            }
+        })
+    
+        let halfwayThrough = Math.floor(characters.length / 2)
+        let arrayFirstHalf = characters.slice(0, halfwayThrough);
+        let arraySecondHalf = characters.slice(halfwayThrough, characters.length);
+    
+        document.querySelector(`.battle-log`).querySelectorAll('ol').forEach(el => {
+            el && el.remove();
+        });
+        document.querySelector('div.result') && document.querySelector('div.result').remove();
+    
+        let gladiator1 = new Gladiator(...arrayFirstHalf);
+        let gladiator2 = new Gladiator(...arraySecondHalf);
+        // console.log(gladiator1);
+        // console.log(gladiator2);
+    
+        battle(gladiator1, gladiator2);
     })
+);
 
-    let halfwayThrough = Math.floor(characters.length / 2)
-    let arrayFirstHalf = characters.slice(0, halfwayThrough);
-    let arraySecondHalf = characters.slice(halfwayThrough, characters.length);
+// document.querySelector('input[type="submit"]').addEventListener('click touchend', e => {
+//     e.preventDefault();
+//     const characters = [];
+//     document.querySelectorAll('input').forEach(el => {
+//         if (el.getAttribute('type') != 'submit') {
+//             characters.push(el.value);
+//         }
+//     })
 
-    document.querySelector(`.battle-log`).querySelectorAll('ol').forEach(el => {
-        el && el.remove();
-    });
-    document.querySelector('div.result') && document.querySelector('div.result').remove();
+//     let halfwayThrough = Math.floor(characters.length / 2)
+//     let arrayFirstHalf = characters.slice(0, halfwayThrough);
+//     let arraySecondHalf = characters.slice(halfwayThrough, characters.length);
 
-    let gladiator1 = new Gladiator(...arrayFirstHalf);
-    let gladiator2 = new Gladiator(...arraySecondHalf);
-    // console.log(gladiator1);
-    // console.log(gladiator2);
+//     document.querySelector(`.battle-log`).querySelectorAll('ol').forEach(el => {
+//         el && el.remove();
+//     });
+//     document.querySelector('div.result') && document.querySelector('div.result').remove();
 
-    battle(gladiator1, gladiator2);
-})
+//     let gladiator1 = new Gladiator(...arrayFirstHalf);
+//     let gladiator2 = new Gladiator(...arraySecondHalf);
+//     // console.log(gladiator1);
+//     // console.log(gladiator2);
+
+//     battle(gladiator1, gladiator2);
+// })
 
 class Gladiator {
     textLog = "";
