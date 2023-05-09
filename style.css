@@ -103,6 +103,13 @@ h6 {
 body {
     min-height: 100%;
     /* background-color: #ffffff; */
+}
+
+.webp body {
+    background: url('./img/Background_Black_ocean_dark.webp') fixed no-repeat;
+}
+
+.no-webp body {
     background: url('./img/Background_Black_ocean_dark.png') fixed no-repeat;
 }
 
