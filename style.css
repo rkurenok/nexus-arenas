@@ -97,7 +97,7 @@ h6 {
     color: #ffffff;
     box-sizing: border-box;
     word-wrap: break-word;
-    font-family: 'google sans', Roboto, Segoe UI, sans-serif;
+    font-family: Segoe UI, sans-serif;
 }
 
 body {
@@ -146,7 +146,6 @@ label {
     display: block;
     /* margin-bottom: 10px; */
     margin-left: 15px;
-    margin-bottom: 4px;
 }
 
 a {
@@ -159,9 +158,9 @@ input {
     line-height: 28px;
     padding: 2px 8px;
     border-radius: 4px;
-    background: rgba(26, 26, 26, 0.7);
+    background-color: rgb(26 26 26);
     min-width: 250px;
-    border: 1px solid rgba(98, 98, 98, 0.7);
+    border: 2px solid rgb(98 98 98);
     -webkit-appearance: none;
 }
 
@@ -224,7 +223,7 @@ li.attack {
 }
 
 li.attack.crit {
-    color: hsl(30, 75%, 50%);
+    color: #92572e;
 }
 
 li.current-hp {
@@ -232,19 +231,23 @@ li.current-hp {
 }
 
 span.green {
-    color: hsl(100, 75%, 50%);
+    color: #54ad34;
 }
 
 span.yellow {
-    color: #cfdf20;
+    color: #bec650;
 }
 
 span.red {
-    color: #df2020;
+    color: #61090f;
 }
 
 @media (max-width: 584px) {
     .character {
         flex-direction: column;
     }
+}
+
+select {
+    background-color: rgb(26 26 26);
 }
