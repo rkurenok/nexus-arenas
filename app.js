@@ -17,7 +17,7 @@ function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symb
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 ['click', 'touchend'].forEach(function (evnt) {
-  return document.querySelector('input[type="submit"]').addEventListener(evnt, function (e) {
+  document.querySelector('input#fight').addEventListener(evnt, function (e) {
     e.preventDefault();
     var characters = [];
     document.querySelectorAll('input').forEach(function (el) {
@@ -35,6 +35,17 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     var gladiator1 = _construct(Gladiator, _toConsumableArray(arrayFirstHalf));
     var gladiator2 = _construct(Gladiator, _toConsumableArray(arraySecondHalf));
     battle(gladiator1, gladiator2);
+  });
+  document.querySelectorAll('input#savePreset').forEach(function (elem) {
+    elem.addEventListener(evnt, function (e) {
+      e.preventDefault();
+      var characters = [];
+      elem.parentElement.querySelectorAll('input:not(input[type="submit"])').forEach(function (el) {
+        characters.push(el.value);
+      });
+      localStorage[characters[0]] = JSON.stringify(characters);
+      console.log(localStorage.getItem(characters[0]));
+    });
   });
 });
 var Gladiator = /*#__PURE__*/function () {
@@ -151,3 +162,25 @@ var mob = device.match(/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera
 if (mob) {
   $(".bg-cover").removeClass("bg-fixed");
 }
+window.onload = function () {
+  var selectHTML = '';
+  for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i);
+    console.log("".concat(key, ": ").concat(localStorage.getItem(key)));
+    selectHTML += "<option value=\"".concat(key, "\">").concat(key, "</option>");
+  }
+  document.querySelectorAll('.my-select').forEach(function (select) {
+    select.innerHTML += selectHTML;
+  });
+};
+document.querySelectorAll('.my-select').forEach(function (select) {
+  select.addEventListener('click', function (e) {
+    var selectedOption = e.target.options[e.target.selectedIndex];
+    console.log(selectedOption.value);
+    console.log(JSON.parse(localStorage.getItem(selectedOption.value)));
+    var characters = JSON.parse(localStorage.getItem(selectedOption.value));
+    select.parentElement.querySelectorAll('input:not(input[type="submit"])').forEach(function (el, index) {
+      el.value = characters[index];
+    });
+  });
+});
