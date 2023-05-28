@@ -97,7 +97,7 @@ h6 {
     color: #ffffff;
     box-sizing: border-box;
     word-wrap: break-word;
-    font-family: Segoe UI, sans-serif;
+    font-family: 'google sans', Roboto, Segoe UI, sans-serif;
 }
 
 body {
@@ -106,11 +106,11 @@ body {
 }
 
 .webp body {
-    background-image: url('./img/Background_Black_ocean_dark.webp');
+    background-image: url('background_next_2023_empty.webp');
 }
 
 .no-webp body {
-    background-image: url('./img/Background_Black_ocean_dark.png');
+    background-image: url('background_next_2023_empty.png');
 }
 
 .bg-cover {background-repeat: no-repeat; background-position: center center; background-size: cover; -webkit-background-size: cover;}
@@ -146,10 +146,21 @@ label {
     display: block;
     /* margin-bottom: 10px; */
     margin-left: 15px;
+    margin-bottom: 4px;
+}
+
+label img {
+    vertical-align: middle;
+    margin-right: 4px;
 }
 
 a {
-    color: #5469d4;
+    color: #add454;
+    text-decoration: unset;
+}
+
+a:hover {
+    color: #c3ef5f;
     text-decoration: unset;
 }
 
@@ -158,10 +169,20 @@ input {
     line-height: 28px;
     padding: 2px 8px;
     border-radius: 4px;
-    background-color: rgb(26 26 26);
+    background-color: rgba(26, 26, 26, 0.71);
     min-width: 250px;
-    border: 2px solid rgb(98 98 98);
+    border: 2px solid rgba(98, 98, 98, 0.71);
     -webkit-appearance: none;
+    
+}
+
+input:hover {
+    background-color: rgba(26, 26, 26, 0.8);
+    border: 2px solid rgba(128, 128, 128, 0.8);
+}
+
+input:focus {
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
 }
 
 input[type="submit"] {
@@ -171,6 +192,10 @@ input[type="submit"] {
     padding: 8px 48px;
     border: none;
     border-radius: 6px;
+}
+
+input[type="submit"]:hover {
+    color: rgb(217, 217, 217);
 }
 
 .battle-log {
@@ -223,7 +248,7 @@ li.attack {
 }
 
 li.attack.crit {
-    color: #92572e;
+    color: rgb(223, 128, 32);
 }
 
 li.current-hp {
@@ -231,15 +256,15 @@ li.current-hp {
 }
 
 span.green {
-    color: #54ad34;
+    color: rgb(96, 223, 32);
 }
 
 span.yellow {
-    color: #bec650;
+    color: #cfdf20;
 }
 
 span.red {
-    color: #61090f;
+    color: #df2020;
 }
 
 @media (max-width: 584px) {
@@ -249,5 +274,16 @@ span.red {
 }
 
 select {
-    background-color: rgb(26 26 26);
+    background-color: rgba(26, 26, 26, 0.71);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+select:hover {
+    background-color: rgba(26, 26, 26, 0.8);
+}
+
+option {
+    background: rgb(26, 26, 26);
+    color: #ccc;
 }
