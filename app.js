@@ -71,7 +71,7 @@ var Gladiator = /*#__PURE__*/function () {
     value: function hit(armor) {
       var critText = this.textLog = "";
       this.hp = this.hp + this.regenHPperSec > this.maxHP ? this.maxHP : this.hp + this.regenHPperSec;
-      var dmgDone = ((Number(Math.random().toFixed(2)) + 0.01) * this.damage * (1 - armor / 100)).toFixed(2);
+      var dmgDone = ((Number(Math.random().toFixed(2)) + 0.51) * this.damage * (1 - armor / 100)).toFixed(2);
       if ((Math.random() * 100).toFixed(1) <= this.crit) {
         dmgDone *= 2;
         critText = " кританул и";
