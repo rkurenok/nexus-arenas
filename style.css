@@ -94,7 +94,6 @@ h6 {
     padding: 0;
     margin: 0;
     /* color: #1a1f36; */
-    color: #ffffff;
     box-sizing: border-box;
     word-wrap: break-word;
     font-family: 'google sans', Roboto, Segoe UI, sans-serif;
@@ -103,6 +102,13 @@ h6 {
 body {
     min-height: 100%;
     /* background-color: #ffffff; */
+    padding: 24px;
+    color: #ffffff;
+    background: url('background_next_2023_empty.png') fixed;
+}
+
+a {
+    color: white;
 }
 
 .webp body {
@@ -118,7 +124,7 @@ body {
 
 .character {
     display: flex;
-    padding-top: 50px;
+    padding-top: 0px;
 }
 
 .glad {
@@ -165,20 +171,21 @@ a:hover {
 }
 
 input {
+    color: white;
     font-size: 16px;
     line-height: 28px;
     padding: 2px 8px;
     border-radius: 4px;
     background-color: rgba(26, 26, 26, 0.71);
     min-width: 250px;
-    border: 2px solid rgba(98, 98, 98, 0.71);
+    border: 2px solid rgba(128, 128, 128, 0.71);
     -webkit-appearance: none;
     
 }
 
 input:hover {
     background-color: rgba(26, 26, 26, 0.8);
-    border: 2px solid rgba(128, 128, 128, 0.8);
+    border: 2px solid rgba(140, 140, 140, 0.8);
 }
 
 input:focus {
@@ -274,6 +281,7 @@ span.red {
 }
 
 select {
+    color: white;
     background-color: rgba(26, 26, 26, 0.71);
     padding: 8px;
     border-radius: 4px;
@@ -284,6 +292,131 @@ select:hover {
 }
 
 option {
+    color: white;
     background: rgb(26, 26, 26);
     color: #ccc;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+.title {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    font-size: 18px;
+}
+
+.page {
+    background: rgba(26, 26, 26, 0.71);
+    border-right: 2px solid #808080;
+    padding: 8px;
+    margin: 8px 0px;
+}
+
+.name_event {
+    display: block;
+    font-size: 16px;
+    padding: 8px;
+}
+
+.time {
+    color: #808080;
+    padding: 4px;
+}
+
+.main {
+    color: #808080;
+}
+
+.main span {
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.main p {
+    color: #808080;
+    margin: 4px;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    padding: 8px;
+    margin: 8px 0px;
+}
+
+.menu a:hover {
+    background: rgba(128, 128, 128, 0.5);
+}
+
+.menu span{
+    display: inline-block;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.menu img {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.menu .dis {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.stat {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+    padding: 8px;
+    margin: 2px;
+}
+
+.stat div {
+    color: #808080;
+}
+
+.name_char {
+    text-align: left;
+}
+
+.battles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+    padding: 8px;
+}
+
+.battles div {
+    padding: 
+}
+
+.vin  {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    padding: 5px 0px 0px 0px;
+    font-weight: 600;
+}
+
+.lose  {
+    background: rgba(255, 0, 0, 0.25);
+    color: red;
+    padding: 5px 0px 0px 0px;
+    font-weight: 600;
+}
+
+.townhall {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 8px;
+}
+
+.scroll {
+    padding: 8px;
 }

@@ -11,6 +11,20 @@
 </head>
 
 <body class="bg-cover bg-fixed">
+   <div class="grid_container">
+   <div>
+    <div class="title">Меню</div>
+    
+            <div class="menu">
+                <a href="index.html" class="dis"><img src="icons/icon_7.png" alt=""><span>Nexus Arenas</span></a>
+                <a href="gladiators.html"><img src="icons/icon_7.png" alt=""><span>Гладиаторы</span></a>
+                <a href="mobs.html"><img src="icons/icon_7.png" alt=""><span>Существа</span></a>
+                <a href="battels.html"><img src="icons/icon_7.png" alt=""><span>Бои</span></a>
+                <a href="townhall.html"><img src="icons/icon_7.png" alt=""><span>Ратуша</span></a>
+                <a href="minstats.html"><img src="icons/icon_7.png" alt=""><span>Минимальные статы</span></a>
+            </div>
+    
+   </div>
     <main>
         <div class="character">
             <div class="glad">
@@ -29,7 +43,7 @@
                 </div>
                 <div>
                     <label for="crit"> <img src="icons/icon_3.png" alt=""> Крит</label>
-                    <input id="crit" type="number" value="5" name="crit">
+                    <input id="crit" type="number" value="1" name="crit">
                 </div>
                 <div>
                     <label for="prot"> <img src="icons/icon_4.png" alt=""> Защита</label>
@@ -46,6 +60,18 @@
                 <div>
                     <label for="level"> <img src="icons/icon_8.png" alt=""> Уровень</label>
                     <input id="level" type="number" value="0" name="level">
+                </div>
+                <div>
+                    <label for="xp"> <img src="icons/icon_9.png" alt=""> Опыт</label>
+                    <input id="xp" type="number" value="0" name="level">
+                </div>
+                <div>
+                    <label for="vin"> <img src="icons/icon_17.png" alt=""> Побед</label>
+                    <input id="vin" type="number" value="0" name="level">
+                </div>
+                <div>
+                    <label for="lose"> <img src="icons/icon_16.png" alt=""> Поражений</label>
+                    <input id="lose" type="number" value="0" name="level">
                 </div>
                 <input type="submit" value="Сохранить набор 1" id="savePreset">
                 <select class="my-select">
@@ -68,7 +94,7 @@
                 </div>
                 <div>
                     <label for="crit"> <img src="icons/icon_3.png" alt=""> Крит</label>
-                    <input id="crit" type="number" value="5" name="crit">
+                    <input id="crit" type="number" value="1" name="crit">
                 </div>
                 <div>
                     <label for="prot"> <img src="icons/icon_4.png" alt=""> Защита</label>
@@ -86,6 +112,18 @@
                     <label for="level"> <img src="icons/icon_8.png" alt=""> Уровень</label>
                     <input id="level" type="number" value="0" name="level">
                 </div>
+                <div>
+                    <label for="xp"> <img src="icons/icon_9.png" alt=""> Опыт</label>
+                    <input id="xp" type="number" value="0" name="level">
+                </div>
+                <div>
+                    <label for="vin"> <img src="icons/icon_17.png" alt=""> Побед</label>
+                    <input id="vin" type="number" value="0" name="level">
+                </div>
+                <div>
+                    <label for="lose"> <img src="icons/icon_16.png" alt=""> Поражений</label>
+                    <input id="lose" type="number" value="0" name="level">
+                </div>
                 <input type="submit" value="Сохранить набор 2" id="savePreset">
                 <select class="my-select">
                     <option value="default">Пресеты</option>
@@ -95,9 +133,22 @@
         <input type="submit" value="Бой" id="fight">
         <div class="battle-log"></div>
     </main>
+<div>
+    <div class="title">События</div>
+    <div class="page">
+            <div class="name_event">Упрощение</div>
+            <div class="time">00:00 06.06.2023 - 00:00 08:06:2023</div>
+            <div class="main">
+                Упрощение приложения Nexus Arenas так-же переработать распределитель характеристик.
+            </div>
+    </div>
+</div>
+</div>
     <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
     <!-- <script type="text/babel" src="app.js"></script> -->
     <script src="app.js"></script>
 </body>
 
 </html>
+
+
