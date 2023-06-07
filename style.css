@@ -274,7 +274,7 @@ span.red {
     color: #df2020;
 }
 
-@media (max-width: 584px) {
+@media (max-width: 720px) {
     .character {
         flex-direction: column;
     }
@@ -419,4 +419,22 @@ option {
 
 .scroll {
     padding: 8px;
+}
+
+@media (max-width: 720px) {
+    .grid_container {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-content:flex-end;
+        align-items: center;
+        align-self:stretch;
+        
+    }
+    .left-grid {
+        display: none;
+    }
+    .right-grid {
+        display: none;
+    }
+    
 }
